@@ -1,71 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image with Icons</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding-top: 200px;
-      display: flex;
-      justify-content: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video with Icons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
 
-    .container {
-      max-width: 1000px;   /* keeps it from stretching too wide */
-      width: 100%;
-      text-align: center;
-    }
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            text-align: center;
+            background: #f3f;
+        }
 
-    .main-image {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      border-radius: 8px; /* optional, just for style */
-    }
+        .main-video {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 0px;
+            background: #f3f3f3;
+        }
 
-    .icon-container {
-      display: flex;
-      justify-content: center;
-      gap: 20px;         /* spacing between icons */
-      margin-top: 15px;
-      flex-wrap: wrap;   /* so icons wrap on smaller screens */
-    }
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
 
-    .icon-container a {
-      display: inline-block;
-    }
+        .icon-container a {
+            display: inline-block;
+        }
 
-    .icon {
-      width: 20px;
-      height: 20px;
-      opacity: 20%;
-      transition: transform 0.2s ease;
-    }
+        .icon {
+            width: 20px;
+            height: 20px;
+            opacity: 20%;
+            transition: transform 0.2s ease;
+        }
 
-    .icon:hover {
-      transform: scale(1.1); /* little zoom effect on hover */
-    }
-  </style>
+        .icon:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <img src="images/eiiva0014f.jpg" alt="Main Image" class="main-image">
+    <div class="container">
+        <!-- Video acting like a GIF -->
+        <video class="main-video" autoplay muted loop playsinline>
+            <source src="images/0930.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-    <div class="icon-container">
-      <a href="mailto:example@email.com">
-        <img src="images/5941217.png" alt="Email" class="icon">
-      </a>
-      <a href="https://twitter.com" target="_blank">
-        <img src="images/5968958.png" alt="Twitter" class="icon">
-      </a>
-      <a href="https://instagram.com" target="_blank">
-        <img src="images/1384031.png" alt="Instagram" class="icon">
-      </a>
+        <!-- Social Icons -->
+        <div class="icon-container">
+            <a href="mailto:example@email.com">
+                <img src="5941217.png" alt="Email" class="icon">
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <img src="5968958.png" alt="Twitter" class="icon">
+            </a>
+            <a href="https://instagram.com" target="_blank">
+                <img src="1384031.png" alt="Instagram" class="icon">
+            </a>
+        </div>
     </div>
-  </div>
 </body>
 </html>
