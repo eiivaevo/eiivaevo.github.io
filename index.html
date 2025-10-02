@@ -14,7 +14,9 @@
             background: #0d0b0d;
         }
 
-        .container {
+        .container-wrap {
+            position: relative;
+            display: inline-block;
             max-width: 1000px;
             width: 100%;
             text-align: center;
@@ -30,13 +32,16 @@
             background:
         }
 
-        .icon-container {
+        .icon-overlay {
+            position: absolute;
             display: flex;
             justify-content: center;
             gap: 20px;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
             margin-top: 15px;
             flex-wrap: wrap;
-            margin-top: -110px;
             opacity: 40%;
         }
 
@@ -57,7 +62,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container-wrap">
         <!-- Video acting like a GIF -->
         <video class="main-video" autoplay muted loop playsinline>
             <source src="images/1002a.mp4" type="video/mp4">
@@ -65,7 +70,7 @@
         </video>
 
         <!-- Social Icons -->
-        <div class="icon-container">
+        <div class="icon-overlay">
             <a href="mailto:example@email.com">
                 <img src="images/email.png" alt="Email" class="icon">
             </a>
