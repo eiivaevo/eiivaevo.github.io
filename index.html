@@ -48,6 +48,16 @@
             background: #100f10;
         }
 
+        .icon-bar {
+            margin-top: 20px;
+            padding: 15px 0;              /* space above/below icons */
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: clamp(10px, 3vw, 30px);
+            background-color: #100f10;       /* match your video/image background */
+        }
+
         .icon-container a {
             display: inline-block;
             opacity: 40%;
@@ -84,8 +94,10 @@
         </video>
 
         <!-- Social Icons -->
-        <div class="icon-container">
-                <img src="images/email.png" alt="Email" class="icon"/>
+        <div class="icon-bar">
+            <a href="mailto:example@email.com">
+                <img src="images/email.png" alt="Email" class="icon">
+            </a>
             <a href="https://x.com/EIIVA_Evolution" target="_blank">
                 <img src="images/x.png" alt="Twitter" class="icon">
             </a>
