@@ -1,106 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>EIIVA | Evolution</title>
-<style>
-  :root{
-    /* tweak these if you want larger/smaller icons globally */
-    --overlay-width: 90%;   /* how wide the icon row is relative to the video */
-    --icon-min: 24px;
-    --icon-preferred-vw: 6vw; /* responsive suggestion */
-    --icon-max: 24px;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video with Icons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding-top: 200px;
+            display: flex;
+            justify-content: center;
+            background: #130013;
+        }
 
-  body{
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    background: #131113;
-    font-family: Arial, sans-serif;
-  }
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            text-align: center;
+            background: #ffffff;
+        }
 
-  .video-wrapper{
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    max-width: 900px; /* change to taste */
-  }
+        .main-video {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 0px;
+            background: #f3f;
+        }
 
-  .main-video{
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: px;
-    background: #131113;
-  }
+        .icon-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 0px;
+            flex-wrap: wrap;
+            background: #130013;
+        }
 
-  /* overlay that holds the icons */
-  .icon-overlay{
-    position: absolute;
-    top: 530px;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 10%;               /* how far up from bottom of video */
-    width: var(--overlay-width); /* constrained to video width */
-    display: flex;
-    gap: 10px; /* spread icons evenly across overlay */
-    justify-content: center;
-    align-items: center;
-    opacity: 20%;
-    flex-wrap: nowrap; /* do not allow wrapping */
-    pointer-events: auto;
-    /* optional visual help while testing: uncomment
-    background: rgba(255,255,255,0.05);
-    */
-  }
+        .icon-container a {
+            display: inline-block;
+        }
 
-  /* responsive icon sizing — scales, but constrained */
-  .icon{
-    width: clamp(var(--icon-min), var(--icon-preferred-vw), var(--icon-max));
-    height: auto;
-    display: block; /* removes inline spacing issues */
-    flex: 0 1 auto; /* allow shrink if needed */
-    max-height: 10vh; /* optional safeguard (prevents icons taller than viewport) */
-    transition: transform .15s ease;
-    opacity: 20%;
-  }
+        .icon {
+            width: 24px;
+            height: 24px;
+            opacity: 20%;
+            transition: transform 0.2s ease;
+        }
 
-  .icon:hover{ transform: translateY(-4px) scale(1.05); }
+        .icon:hover {
+            transform: scale(1.1);
+        }
+        .extra-image {
+            margin-top: px;
+            background: #f33;
+        }
+        .extra-image img {
+            max-width: 1000px;
+            width: 100%;
+            height: auto;
+        }
 
-  /* very small phones: a tiny tweak so icons don't get too close to the edges */
-  @media (max-width: 380px){
-    :root { --icon-preferred-vw: 8vw; } /* icons use a bit more relative space when tiny */
-    .icon-overlay { bottom: 8%; width: 95%; } /* give slightly more width */
-  }
-</style>
+        }
+    </style>
 </head>
 <body>
-  <div class="video-wrapper">
-    <!-- responsive video -->
-    <video class="main-video" autoplay muted loop playsinline>
-      <source src="images/1003f.mp4" type="video/mp4">
-      Your browser does not support the video.
-    </video>
+    <div class="container">
+        <!-- Video acting like a GIF -->
+        <video class="main-video" autoplay muted loop playsinline>
+            <source src="images/1004.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-    <!-- overlayed icons (will always stay within ~90% of the video's width) -->
-    <div class="icon-overlay">
-      <a href="mailto:example@email.com"><img class="icon" src="images/email.png" alt="Email"></a>
-      <a href="https://x.com/EIIVA_Evolution" target="_blank" rel="noopener"><img class="icon" src="images/x.png" alt="X"></a>
-      <a href="https://instagram.com" target="_blank" rel="noopener"><img class="icon" src="images/instagram.png" alt="Instagram"></a>
-      <a href="https://tiktok.com" target="_blank" rel="noopener"><img class="icon" src="images/tiktok.png" alt="Tiktok"></a>
-      <a href="https://youtube.com" target="_blank" rel="noopener"><img class="icon" src="images/youtube.png" alt="Youtube"></a>
+        <!-- Social Icons -->
+        <div class="icon-container">
+            <a href="mailto:example@email.com">
+                <img src="images/email.png" alt="Email" class="icon">
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <img src="images/x.png" alt="Twitter" class="icon">
+            </a>
+            <a href="https://instagram.com" target="_blank">
+                <img src="images/instagram.png" alt="Instagram" class="icon">
+            </a>
+             <a href="https://tiktok.com" target="_blank">
+                <img src="images/tiktok.png" alt="tiktok" class="icon">
+            </a>
+            <a href="https://youtube.com" target="_blank">
+                <img src="images/youtube.png" alt="youtube" class="icon">
+            </a>
+        </div>
+        <div class="extra-image">
+            <img src="src="images/video02.jpg" alt="Borderer" />
+        </div>
     </div>
-  </div>
-<!-- Default Statcounter code for EIIVA
+    <!-- Default Statcounter code for EIIVA
 https://www.eiiva.com/ -->
 <script type="text/javascript">
-var sc_project=13170331; 
-var sc_invisible=1; 
-var sc_security="0c12ee94"; 
+var sc_project=13170331;
+var sc_invisible=1;
+var sc_security="0c12ee94";
 </script>
 <script type="text/javascript"
 src="https://www.statcounter.com/counter/counter.js"
