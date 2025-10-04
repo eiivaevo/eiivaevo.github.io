@@ -1,92 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EIIVA|Evolution</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding-top: 150px;
-            display: flex;
-            justify-content: center;
-            background: #111111;
-        }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>EIIVA | Evolution</title>
+<style>
+  :root{
+    /* tweak these if you want larger/smaller icons globally */
+    --overlay-width: 90%;   /* how wide the icon row is relative to the video */
+    --icon-min: 24px;
+    --icon-preferred-vw: 6vw; /* responsive suggestion */
+    --icon-max: 48px;
+  }
 
-        .container-wrap {
-            position: relative;
-            display: inline-block;
-            max-width: 700px;
-            width: 100%;
-            text-align: center;
-            background:
-        }
+  body{
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background: #111111;
+    font-family: Arial, sans-serif;
+  }
 
-        .main-video {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            border-radius: 0px;
-            background:
-        }
+  .video-wrapper{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 900px; /* change to taste */
+  }
 
-        .icon-overlay {
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            bottom: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            margin-top: 15px;
-            flex-wrap: wrap;
-            opacity: 100%;
-        }
+  .main-video{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: px;
+    background: #000;
+  }
 
-        .icon-container a {
-            display: inline-block;
-        }
+  /* overlay that holds the icons */
+  .icon-overlay{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10%;               /* how far up from bottom of video */
+    width: var(--overlay-width); /* constrained to video width */
+    display: flex;
+    justify-content: space-between; /* spread icons evenly across overlay */
+    align-items: center;
+    flex-wrap: nowrap; /* do not allow wrapping */
+    pointer-events: auto;
+    /* optional visual help while testing: uncomment
+    background: rgba(255,255,255,0.05);
+    */
+  }
 
-        .icon {
-            width: 24px;
-            height: 24px;
-            transition: transform 0.2s ease;
-        }
+  /* responsive icon sizing — scales, but constrained */
+  .icon{
+    width: clamp(var(--icon-min), var(--icon-preferred-vw), var(--icon-max));
+    height: auto;
+    display: block; /* removes inline spacing issues */
+    flex: 0 1 auto; /* allow shrink if needed */
+    max-height: 10vh; /* optional safeguard (prevents icons taller than viewport) */
+    transition: transform .15s ease;
+  }
 
-        .icon:hover {
-            transform: scale(1.1);
-        }
-    </style>
+  .icon:hover{ transform: translateY(-4px) scale(1.05); }
+
+  /* very small phones: a tiny tweak so icons don't get too close to the edges */
+  @media (max-width: 380px){
+    :root { --icon-preferred-vw: 8vw; } /* icons use a bit more relative space when tiny */
+    .icon-overlay { bottom: 8%; width: 95%; } /* give slightly more width */
+  }
+</style>
 </head>
 <body>
-    <div class="container-wrap">
-        <!-- Video acting like a GIF -->
-        <video class="main-video" autoplay muted loop playsinline>
-            <source src="images/1003f.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+  <div class="video-wrapper">
+    <!-- responsive video -->
+    <video class="main-video" autoplay muted loop playsinline>
+      <source src="images/1003f.mp4" type="video/mp4">
+      Your browser does not support the video.
+    </video>
 
-        <!-- Social Icons -->
-        <div class="icon-overlay">
-            <a href="mailto:example@email.com">
-                <img src="images/email.png" alt="Email" class="icon">
-            </a>
-            <a href="https://x.com/eiiva_evolution" target="_blank">
-                <img src="images/x.png" alt="Twitter" class="icon">
-            </a>
-            <a href="https://instagram.com" target="_blank">
-                <img src="images/instagram.png" alt="Instagram" class="icon">
-            </a>
-             <a href="https://tiktok.com" target="_blank">
-                <img src="images/tiktok.png" alt="tiktok" class="icon">
-            </a>
-            <a href="https://youtube.com" target="_blank">
-                <img src="images/youtube.png" alt="youtube" class="icon">
-            </a>
-        </div>
+    <!-- overlayed icons (will always stay within ~90% of the video's width) -->
+    <div class="icon-overlay">
+      <a href="mailto:example@email.com"><img class="icon" src="images/email.png" alt="Email"></a>
+      <a href="https://x.com" target="_blank" rel="noopener"><img class="icon" src="images/x.png" alt="X"></a>
+      <a href="https://instagram.com" target="_blank" rel="noopener"><img class="icon" src="images/instagram.png" alt="Instagram"></a>
+      <a href="https://tiktok.com" target="_blank" rel="noopener"><img class="icon" src="images/tiktok.png" alt="Tiktok"></a>
+      <a href="https://youtube.com" target="_blank" rel="noopener"><img class="icon" src="images/youtube.png" alt="Youtube"></a>
     </div>
+  </div>
 <!-- Default Statcounter code for EIIVA
 https://www.eiiva.com/ -->
 <script type="text/javascript">
