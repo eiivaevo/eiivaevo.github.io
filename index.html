@@ -10,7 +10,7 @@
     --overlay-width: 90%;   /* how wide the icon row is relative to the video */
     --icon-min: 24px;
     --icon-preferred-vw: 6vw; /* responsive suggestion */
-    --icon-max: 48px;
+    --icon-max: 24px;
   }
 
   body{
@@ -34,7 +34,7 @@
     height: auto;
     display: block;
     border-radius: px;
-    background: #000;
+    background: #111111;
   }
 
   /* overlay that holds the icons */
@@ -47,6 +47,7 @@
     display: flex;
     justify-content: space-between; /* spread icons evenly across overlay */
     align-items: center;
+    opacity: 40%;
     flex-wrap: nowrap; /* do not allow wrapping */
     pointer-events: auto;
     /* optional visual help while testing: uncomment
