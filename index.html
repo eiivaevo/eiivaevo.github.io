@@ -14,11 +14,19 @@
             background: #100f10;
         }
 
-        .container-wrap {
-            max-width: 1000px;
+        .video-wrapper {
+            max-width: 800px;
             width: 100%;
-            text-align: center;
-            background: #ffffff;
+            margin: 0 auto;
+        
+        }
+        
+        .video-wrapper video,
+        .video-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px; /* optional, match video styling */
         }
 
         .main-video {
@@ -67,7 +75,7 @@
     </style>
 </head>
 <body>
-    <div class="container-wrap">
+    <div class="video-wrapper">
         <!-- Video acting like a GIF -->
         <video class="main-video" autoplay muted loop playsinline>
             <source src="images/1004.mp4" type="video/mp4">
@@ -92,8 +100,8 @@
                 <img src="images/youtube.png" alt="youtube" class="icon">
             </a>
         </div>
-        <div class="container-wrap">
-            <img src="src="images/image55.jpg" alt="Border" class="main-video"/>
+        <div class="video-wrapper">
+            <img src="src="images/image55.jpg" alt="Border">
         </div>
     </div>
     <!-- Default Statcounter code for EIIVA
