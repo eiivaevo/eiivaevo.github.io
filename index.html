@@ -58,9 +58,10 @@
             background-color: #100f10;       /* match your video/image background */
         }
 
-        .icon-container a {
+        .icon-bar a {
             display: inline-block;
-            opacity: 40%;
+            color: rgba(255, 255, 255, 0.6);   /* white at 60% opacity */
+            transition: color 0.2s;
         }
 
         .icon {
@@ -69,8 +70,9 @@
             transition: transform 0.2s ease;
         }
 
-        .icon:hover {
+        .icon-bar a:hover {
             transform: scale(1.1);
+            color: rgba(255, 255, 255, 1);     /* bright white on hover */
         }
         .extra-image {
             margin-top: px;
